@@ -4,6 +4,6 @@
 }
 
 .signIn-page button{
-  @apply mx-auto font-semibold mt-6 shadow-lg 
-  btn-lg btn-primary overflow-hidden rounded-full;
+  @apply font-semibold shadow-md btn-md btn-primary 
+  mx-auto mt-6 overflow-hidden rounded-full;
 }

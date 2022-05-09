@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import { AuthGuard } from "../components/elements/authGuard";
 //custom
 import EventSelection from "../components/eventSelection";
+import ImageLoader from "../components/elements/imageLoader";
 //dynamic
 const PointsSection = dynamic(() => import("../components/points"));
 const EventModal = dynamic(() => import("../components/modals/eventModal"));
@@ -85,7 +86,10 @@ export default function Profile() {
         >
           {session?.user && (
             <div className="relative h-14 w-14 mr-4 rounded-full overflow-hidden">
-              <Image src={session.user.image} layout="fill" alt="pp" />
+              <ImageLoader
+                src={session.user.image}
+                alt="pp"
+              />
             </div>
           )}
           <div>
@@ -101,7 +105,7 @@ export default function Profile() {
             or <span className="text-sky-500 font-bold">Discounts</span>.
           </h1>
           <div className="relative -mt-4 max-w-fit float-right">
-            <Image src="/assets/bin.png" width={130} height={160} alt="" />
+            <ImageLoader src="/assets/bin.png" width={130} height={160} alt="" />
           </div>
         </motion.div>
         <></>
@@ -121,7 +125,7 @@ export default function Profile() {
             Look through it. You might find the answer your looking for.
           </p>
           <div className="relative -mt-2 max-w-fit float-right">
-            <Image src="/assets/faq.webp" width={130} height={120} alt="" />
+            <ImageLoader src="/assets/faq.webp" width={130} height={120} alt="" />
           </div>
         </div>
       </motion.div>

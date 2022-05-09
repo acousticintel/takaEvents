@@ -1,14 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 import dynamic from "next/dynamic";
+import { withRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { signOut, useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
-import { withRouter } from "next/router";
-import Image from "next/image";
-
+import ImageLoader from "../elements/imageLoader";
 //custom
 const BiLeftArrow = dynamic(
   async () => (await import("react-icons/bi")).BiLeftArrow
+);
+const FaRegUserCircle = dynamic(
+  async () => (await import("react-icons/bi")).FaRegUserCircle
 );
 
 const contVar = {
@@ -22,7 +25,8 @@ const contVar = {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.25,
+      when:"beforeChildren",
+      duration: 0.5,
       staggerChildren: 0.15,
     },
   },
@@ -37,7 +41,7 @@ const childVar = {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.15,
+      duration: 0.25,
     },
   },
 };
@@ -52,8 +56,14 @@ function Navbar({ router }) {
 
   if (router.pathname === "/landing") {
     return (
-      <nav className="flex justify-around items-center text-teal-900 bg-lime-50 min-w-full h-20 pt-6">
-        <div className="flex items-center">
+      <motion.nav
+        variants={contVar}
+        initial="closed"
+        animate="open"
+        className="flex justify-around items-center text-teal-900 bg-lime-50 min-w-full h-20 pt-6"
+      >
+        <Link href="/">
+        <motion.div variants={childVar} className="flex items-center">
           <div className="relative w-6 h-8 mr-2">
             <Image src="/assets/logo.png" alt="logo" layout="fill" />
           </div>
@@ -63,10 +73,11 @@ function Navbar({ router }) {
           >
             TAKA
           </span>
-        </div>
+        </motion.div>
+        </Link>
         {status !== "loading" && status === "unauthenticated" && (
           <Link href="/auth/signin" passHref={true}>
-            <button
+            <motion.button variants={childVar}
               className={`bg-neutral
                     text-gray-800 font-bold rounded-full my-6 
                     py-2 px-4 shadow-md focus:outline-none 
@@ -74,15 +85,20 @@ function Navbar({ router }) {
                     hover:scale-105 duration-300 ease-in-out`}
             >
               Login / SignUp
-            </button>
+            </motion.button>
           </Link>
         )}
-      </nav>
+      </motion.nav>
     );
   } else if (router.pathname.indexOf("/auth/") === 0) {
     return (
-      <nav className="flex justify-around items-center text-teal-900 bg-neutral min-w-full h-20 pt-6">
-        <div className="flex items-center">
+      <motion.nav
+        variants={contVar}
+        initial="closed"
+        animate="open"
+        className="flex justify-around items-center text-teal-900 bg-teal-50 min-w-full h-20 pt-6"
+      >
+        <motion.div variants={childVar} className="flex items-center">
           <div className="relative w-6 h-8 mr-2">
             <Image src="/assets/logo.png" alt="logo" layout="fill" />
           </div>
@@ -92,22 +108,36 @@ function Navbar({ router }) {
           >
             TAKA
           </span>
-        </div>
-      </nav>
+        </motion.div>
+      </motion.nav>
     );
   } else {
     return (
-      <nav className="flex justify-around items-center text-teal-900 min-w-full h-20 pt-6">
-        <button className="btn btn-ghost btn-circle" onClick={handleClick}>
+      <motion.nav
+        variants={contVar}
+        initial="closed"
+        animate="open"
+        className="flex justify-around items-center text-teal-900 min-w-full h-20 pt-6"
+      >
+        <motion.button variants={childVar} className="btn btn-ghost btn-circle" onClick={handleClick}>
           <BiLeftArrow size="1.5em" />
-        </button>
-        <span className="uppercase font-medium">{router.pathname?.slice(1)}</span>
-        <div className="dropdown dropdown-end">
+        </motion.button>
+        <motion.span variants={childVar} className="uppercase font-medium">
+          {router.pathname?.slice(1)}
+        </motion.span>
+        <motion.div variants={childVar} className="dropdown dropdown-end">
           <label tabIndex="0" className="btn btn-circle btn-ghost">
-            {session?.user && (
+            {session?.user ? (
               <div className="relative h-7 w-7 rounded-full overflow-hidden">
-                <Image src={session.user.image} layout="fill" alt="pp" />
+                <ImageLoader src={session.user.image} alt="pp" />
               </div>
+            ) : (
+              <button
+                className="btn btn-ghost btn-circle"
+                onClick={handleClick}
+              >
+                <FaRegUserCircle size="2em" />
+              </button>
             )}
           </label>
 
@@ -120,8 +150,8 @@ function Navbar({ router }) {
               <a>Sign Out</a>
             </li>
           </ul>
-        </div>
-      </nav>
+        </motion.div>
+      </motion.nav>
     );
   }
 }

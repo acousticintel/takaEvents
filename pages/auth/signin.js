@@ -33,12 +33,14 @@ export default function SignIn({ providers }) {
   return (
     <div className="signIn-page">
       <div className="flex flex-col h-full justify-start items-center">
-        <div className="h-60 w-40 mt-10 rounded-lg overflow-hidden relative">
-          <Image src="/assets/logo.png" alt="Taka" layout="fill" />
+        <div className="h-40 w-28 mt-10 rounded-lg overflow-hidden relative">
+          <Image
+            src="/assets/logo.png"
+            alt="Taka"
+            layout="fill"
+            blurDataURL="/assets/loading.svg"
+          />
         </div>
-        <span className="uppercase text-gray-800 mt-3 font-bold text-2xl">
-          Taka
-        </span>
         {providers &&
           Object.values(providers).map((provider) => (
             <div key={provider.name}>

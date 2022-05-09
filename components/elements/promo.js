@@ -97,10 +97,20 @@ export default function Promo({ p, index }) {
       </div>
       <div className="image">
         {p?.supplier == "Food" && (
-          <Image src="/assets/drink-offer.jpg" layout="fill" />
+          <Image
+            src="/assets/drink-offer.jpg"
+            layout="fill"
+            placeholder="blur"
+            blurDataURL="/assets/load.svg"
+          />
         )}
         {p?.supplier == "Drinks" && (
-          <Image src="/assets/beer-offer.png" layout="fill" />
+          <Image
+            src="/assets/beer-offer.png"
+            layout="fill"
+            placeholder="blur"
+            blurDataURL="/assets/load.svg"
+          />
         )}
       </div>
       <motion.div variants={revealVar} className="tag">

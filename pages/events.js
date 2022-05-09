@@ -38,6 +38,8 @@ export default function events() {
                 className="object-cover"
                 layout="fill"
                 alt=""
+                placeholder="blur"
+                blurDataURL="/assets/load.svg"
               />
             </div>
             <h1>{e.name}</h1>

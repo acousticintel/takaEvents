@@ -8,7 +8,7 @@
 }
 
 .profile-page h5 {
-  @apply text-lg font-semibold uppercase text-teal-600;
+  @apply text-lg font-medium uppercase text-teal-600 -mt-2;
 }
 
 .profile-page > .prof__card:nth-of-type(2) {

@@ -72,9 +72,12 @@ export default function EventSelection() {
             <div className="image__cont">
               <Image
                 src={e.img}
-                className="object-cover"
+                objectFit="cover"
+                objectPosition="top"
                 layout="fill"
                 alt=""
+                placeholder="blur"
+                blurDataURL="/assets/load.svg"
               />
             </div>
             <h1>{e.name}</h1>

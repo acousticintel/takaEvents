@@ -1,13 +1,22 @@
 .loader {
-  @apply fixed overflow-hidden bg-teal-50 min-h-screen min-w-full z-50 
-  flex justify-center items-center pointer-events-none;
-}
-
-.loader.component {
-  @apply  h-full w-full bg-transparent flex justify-center items-center;
+  @apply relative h-full w-full bg-transparent;
 }
 
 .loader.loaded {
   @apply opacity-0;
+}
+
+.image__loader{
+  @apply relative w-full h-full;
+}
+
+.image__loader > .overlay{
+  @apply absolute w-full h-full z-10 bg-black 
+  bg-opacity-20 animate-pulse
+  transition-all duration-300 ease-in-out;
+}
+
+.image__loader.loaded > .overlay{
+  @apply bg-opacity-0 animate-none z-0;
 }
 

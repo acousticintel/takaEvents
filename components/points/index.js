@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 //custom packs
 import { motion } from 'framer-motion';
 import { useData } from '../../context/dataContext';
 import Title from '../elements/title';
+import ImageLoader from '../elements/imageLoader';
 
 
 const contVar = {
@@ -91,7 +91,7 @@ export default function PointsSection() {
               className="abs-center glow"
             />
             <div className="image">
-              <Image src="/assets/points.svg" layout="fill" alt="" />
+              <ImageLoader src="/assets/points.svg" alt="" />
             </div>
           </motion.div>
           <div className="content">
