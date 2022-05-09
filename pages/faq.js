@@ -132,7 +132,7 @@ export default function Offers() {
             </div>
             <div className="collapse-content">
               <p>
-                It's a mobile money wallet by Stanbic Bank that allows you to to
+                Its a mobile money wallet by Stanbic Bank that allows you to to
                 live free by making financial transactions convenient, safe,
                 quick, secure, affordable and easy way. You can send and receive
                 money from other FlexiPay users at no charge, pay bills, shop
@@ -152,7 +152,7 @@ export default function Offers() {
             <div className="collapse-content">
               <p>
                 If you are at an event, we will notify you of our presence
-                through the app notification and if it's a drop off we will
+                through the app notification and if its a drop off we will
                 indicate all the available partner stores near you in the app.
               </p>
             </div>
