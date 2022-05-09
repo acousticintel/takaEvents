@@ -1,0 +1,69 @@
+.profile-page {
+  @apply min-h-screen text-emerald-800 mx-auto
+  container  pt-10 pb-28 px-5 md:px-20;
+}
+
+.profile-page h4 {
+  @apply text-gray-400;
+}
+
+.profile-page h5 {
+  @apply text-lg font-bold uppercase;
+}
+
+.profile-page > .prof__card:nth-of-type(2) {
+  @apply bg-teal-100 rounded-xl w-full mt-10 p-4 
+    overflow-hidden max-h-52 shadow-lg;
+}
+
+.profile-page > section {
+  background-color: #00bfb2;
+  background-image: linear-gradient(315deg, #00bfb2 0%, #028090 74%);
+  @apply px-6 py-6 rounded-3xl mb-10 shadow-lg;
+}
+
+.profile-page h3 {
+  @apply font-normal text-xl;
+}
+
+.points-sec .main_cont {
+  @apply flex flex-col sm:flex-row 
+  items-center justify-around px-10 gap-8 mt-6;
+}
+
+.points-sec .content_cont {
+  @apply flex items-center;
+}
+
+.points-sec .image_cont {
+  @apply relative mr-3;
+}
+
+.points-sec .image_cont > .glow{
+  @apply h-16 w-16 bg-yellow-100 rounded-full blur-sm;
+}
+
+.points-sec .image_cont > .image{
+  @apply relative h-16 w-16 rounded-full overflow-hidden;
+}
+
+.points-sec .content_cont > .content{
+  @apply flex flex-col;
+}
+
+.points-sec .content_cont > .content > span:nth-of-type(1){
+  @apply text-xs text-gray-200;
+}
+
+.points-sec .content_cont > .content > span:nth-of-type(2){
+  @apply text-3xl font-bold text-white;
+}
+
+.points-sec .content_cont > .content > span:nth-of-type(3){
+  @apply text-sm font-medium text-gray-50;
+}
+
+
+.points-sec .button {
+  @apply mx-auto lg:mx-0 rounded-full btn btn-md btn-accent;
+}

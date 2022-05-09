@@ -1,0 +1,12 @@
+.fag__page{
+  @apply min-h-screen text-gray-500 
+  container mx-auto py-8; 
+}
+
+.fag__page > section{
+  @apply h-full px-10 py-12 rounded-xl;
+}
+
+.fag__page > section > div{
+  @apply my-6 bg-neutral;
+}

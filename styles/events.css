@@ -1,0 +1,33 @@
+.events__section {
+  @apply my-6 py-6 w-full h-full;
+}
+
+.events__list {
+  @apply mt-6 grid grid-cols-2 sm:grid-cols-2;
+}
+
+.events__list.single {
+  @apply my-6 flex justify-center items-center;
+}
+
+.events__list > .event {
+  @apply mx-4 grow;
+}
+
+.events__list > .event .image__cont {
+  @apply w-full h-52 md:h-80 relative rounded-2xl overflow-hidden;
+}
+
+.events__list.single > .event .image__cont {
+  @apply w-full md:w-2/3 mx-auto;
+}
+
+.events__list > .event h1 {
+  @apply text-center text-gray-400 font-semibold text-lg my-2;
+}
+
+.events__page {
+  @apply min-h-screen text-gray-800 container 
+  mx-auto pt-8 px-4;
+}
+

@@ -1,0 +1,13 @@
+.loader {
+  @apply fixed overflow-hidden bg-teal-50 min-h-screen min-w-full z-50 
+  flex justify-center items-center pointer-events-none;
+}
+
+.loader.component {
+  @apply  h-full w-full bg-transparent flex justify-center items-center;
+}
+
+.loader.loaded {
+  @apply opacity-0;
+}
+
