@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useData } from "../../context/dataContext";
 //custom
 const IoCloseCircleOutline = dynamic(
-  async () => (await import("react-icons/io5")).IoHappySharp
+  async () => (await import("react-icons/io5")).IoCloseCircleOutline
 );
 
 const bannerVar = {
