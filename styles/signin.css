@@ -1,8 +1,3 @@
-.signIn-page{
-  height: calc(100vh - 4em) !important;
-  @apply bg-teal-50;
-}
-
 .signIn-page button{
   @apply font-semibold shadow-md btn-md btn-primary 
   mx-auto mt-6 overflow-hidden rounded-full;

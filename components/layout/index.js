@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = dynamic(() => import("./navbar"));
 const Banner = dynamic(() => import("./banner"));
 const BottomNav = dynamic(() => import("./bottomNav"));
+const EventModal = dynamic(() => import("../modals/eventModal"));
 
 const variants = {
   hide: { opacity: 1 },
@@ -20,6 +21,7 @@ export default function Layout({ children, path }) {
       </Head>
       <Banner />
       <Navbar />
+      <EventModal />
       <AnimatePresence
         exitBeforeEnter
         initial="hide"

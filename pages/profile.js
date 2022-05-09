@@ -13,7 +13,6 @@ import EventSelection from "../components/eventSelection";
 import ImageLoader from "../components/elements/imageLoader";
 //dynamic
 const PointsSection = dynamic(() => import("../components/points"));
-const EventModal = dynamic(() => import("../components/modals/eventModal"));
 
 const contVar = {
   hide: {},
@@ -72,7 +71,6 @@ export default function Profile() {
 
   return (
     <AuthGuard>
-      <EventModal />
       <motion.div
         className="profile-page"
         variants={contVar}

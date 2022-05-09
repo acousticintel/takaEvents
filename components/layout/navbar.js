@@ -2,8 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { withRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { signOut, useSession } from "next-auth/react";
 import ImageLoader from "../elements/imageLoader";
 //custom
@@ -96,7 +95,7 @@ function Navbar({ router }) {
         variants={contVar}
         initial="closed"
         animate="open"
-        className="flex justify-around items-center text-teal-900 bg-teal-50 min-w-full h-20 pt-6"
+        className="flex justify-around items-center text-teal-900 min-w-full h-20 pt-6"
       >
         <motion.div variants={childVar} className="flex items-center">
           <div className="relative w-6 h-8 mr-2">
