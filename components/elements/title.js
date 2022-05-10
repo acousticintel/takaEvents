@@ -61,7 +61,9 @@ export default function Title({ title, light }) {
       )}
       <motion.span
         variants={slideVar}
-        className={`text-2xl ml-5 ${light ? "text-white" : "text-green-600"} `}
+        className={`text-2xl capitalize ml-5 ${
+          light ? "text-white" : "text-green-600"
+        } `}
       >
         {title}
       </motion.span>

@@ -50,8 +50,8 @@ export default function Offers() {
         <motion.div variants={riseVar} className="buttons-sec">
           <h1>CashBack</h1>
           <p>
-            Cash back refers to a credit card that refunds a small percentage of
-            money spent on purchases.
+            Cashback refers to refunds which are a small percentage of money
+            spent on purchases.
           </p>
           <div className="float-right">
             <button className="btn btn-accent">Send to Mpesa</button>

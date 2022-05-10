@@ -84,10 +84,7 @@ export default function Profile() {
         >
           {session?.user && (
             <div className="relative h-14 w-14 mr-4 rounded-full overflow-hidden">
-              <ImageLoader
-                src={session.user.image}
-                alt="pp"
-              />
+              <ImageLoader src={session.user.image} alt="pp" />
             </div>
           )}
           <div>
@@ -101,9 +98,16 @@ export default function Profile() {
             <br />
             <span className="text-emerald-500 font-bold">Cash </span>
             or <span className="text-sky-500 font-bold">Discounts</span>.
+            <br />
+            Choose your event.
           </h1>
-          <div className="relative -mt-4 max-w-fit float-right">
-            <ImageLoader src="/assets/bin.png" width={130} height={160} alt="" />
+          <div className="relative -mt-10 max-w-fit float-right">
+            <ImageLoader
+              src="/assets/bin.png"
+              width={130}
+              height={160}
+              alt=""
+            />
           </div>
         </motion.div>
         <></>
@@ -123,7 +127,12 @@ export default function Profile() {
             Look through it. You might find the answer your looking for.
           </p>
           <div className="relative -mt-2 max-w-fit float-right">
-            <ImageLoader src="/assets/faq.webp" width={130} height={120} alt="" />
+            <ImageLoader
+              src="/assets/faq.webp"
+              width={130}
+              height={120}
+              alt=""
+            />
           </div>
         </div>
       </motion.div>
