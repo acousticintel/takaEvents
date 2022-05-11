@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 //custom
 const Navbar = dynamic(() => import("./navbar"));
+const SideMenu = dynamic(() => import("../layout/sideMenu"));
 const Banner = dynamic(() => import("./banner"));
 const BottomNav = dynamic(() => import("./bottomNav"));
 const EventModal = dynamic(() => import("../modals/eventModal"));
@@ -20,6 +21,7 @@ export default function Layout({ children, path }) {
         <title>Taka. Earn as you throw waste.</title>
       </Head>
       <Banner />
+      <SideMenu/>
       <Navbar />
       <EventModal />
       <AnimatePresence

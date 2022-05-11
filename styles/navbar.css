@@ -1,5 +1,5 @@
 .main-nav {
-  @apply fixed top-0 z-30 w-full transition-all duration-500 
+  @apply fixed top-0 z-50 w-full transition-all duration-500 
   ease-in-out;
 }
 
@@ -21,6 +21,10 @@
 
 .left-link-nav {
   @apply hidden md:flex items-center space-x-1 ;
+}
+
+nav{
+  @apply relative !z-50;
 }
 
 nav .logo{
