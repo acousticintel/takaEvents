@@ -2,9 +2,10 @@ export const points = [20, 40, 60, 80, 100];
 
 export const routes = [
   { name: "Profile", route: "/profile" },
-  { name: "FAQ", route: "/faq" },
+  { name: "Events", route: "/events" },
   { name: "History", route: "/history" },
   { name: "Offers", route: "/offers" },
+  { name: "FAQ", route: "/faq" },
   { name: "Sign Out", route: "/offers" },
   /**
    * {
