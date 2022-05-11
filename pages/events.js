@@ -13,12 +13,12 @@ export default function events() {
       img: "/assets/event2.jpeg",
     },
     {
-      name: "Rema MNE Fest",
-      img: "/assets/rem.jpeg",
+      name: "Wedding Fest",
+      img: "/assets/wed.jpeg",
     },
     {
-      name: "Rema MNE Fest",
-      img: "/assets/rem.jpeg",
+      name: "Socialize",
+      img: "/assets/shop.jpeg",
     },
   ];
 
