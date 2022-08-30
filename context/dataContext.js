@@ -88,7 +88,7 @@ function useProvideData() {
   async function readPostsHistory() {
     if (session?.user) {
       const q = query(
-        collection(db, `collections/${session?.user.uid}/posts`),
+        collection(db, `collections/${session?.user.id}/posts`),
         orderBy("timestamp", "desc")
       );
       return onSnapshot(q, (snapshot) => {
@@ -102,7 +102,7 @@ function useProvideData() {
       OneSignal.getExternalUserId().then(function (externalUserId) {
         console.log("externalUserId: ", externalUserId);
         if (!externalUserId) {
-          OneSignal.setExternalUserId(session.user.uid);
+          OneSignal.setExternalUserId(session.user.id);
         }
       });
     }
@@ -110,12 +110,12 @@ function useProvideData() {
 
   async function createUser() {
     if (session?.user) {
-      const docRef = doc(db, "users", session.user.uid);
+      const docRef = doc(db, "users", session.user.id);
       const docSnap = await getDoc(docRef);
 
       if (!docSnap.exists()) {
         // Add a new document in collection "users"
-        await updateDoc(doc(db, "users", session.user.uid), {
+        await updateDoc(doc(db, "users", session.user.id), {
           name: session.user.name,
           email: session.user.email,
         });
@@ -126,12 +126,12 @@ function useProvideData() {
   async function logInstallData(log) {
     try {
       if (session?.user) {
-        const docRef = doc(db, "users", session.user.uid);
+        const docRef = doc(db, "users", session.user.id);
         const docSnap = await getDoc(docRef);
         console.log(log);
         if (docSnap.exists()) {
           // Add a new document in collection "installs"
-          await updateDoc(doc(db, "users", session.user.uid), {
+          await updateDoc(doc(db, "users", session.user.id), {
             ...log,
           });
         }
@@ -143,7 +143,7 @@ function useProvideData() {
 
   async function readUserData() {
     if (session?.user) {
-      const docRef = doc(db, "users", session.user.uid);
+      const docRef = doc(db, "users", session.user.id);
 
       onSnapshot(docRef, (doc) => {
         if (doc.exists()) {
@@ -170,7 +170,7 @@ function useProvideData() {
     if (session?.user) {
       const q = query(
         collection(db, "requests"),
-        where("userId", "==", session?.user.uid),
+        where("userId", "==", session?.user.id),
         orderBy("timestamp", "desc")
       );
       return onSnapshot(q, (snapshot) => {
@@ -190,7 +190,7 @@ function useProvideData() {
           const docRef = await addDoc(collection(db, `requests`), {
             profileImg: session.user.image,
             username: session.user.name,
-            userId: session.user.uid,
+            userId: session.user.id,
             status: "pending",
             reqType: type,
             orders,

@@ -54,7 +54,7 @@ body{
 }
 
 .page-content{
-  @apply text-teal-900;
+  @apply text-teal-900 w-screen overflow-x-hidden;
 }
 
 .abs-center{

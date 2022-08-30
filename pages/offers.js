@@ -54,7 +54,7 @@ export default function Offers() {
             spent on purchases.
           </p>
           <div className="float-right">
-            <button className="btn btn-accent">Send to Flexipay</button>
+            <button className="btn btn-accent">Send to Mpesa</button>
           </div>
         </motion.div> 
         <Title title="Offers" />
